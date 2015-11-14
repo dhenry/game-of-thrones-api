@@ -40,7 +40,7 @@ public class Main {
 
         get("/newGame", "application/json", (request1, response1) -> {
             gameState.newGame();
-            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame().getWildlingsStrength());
+            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame());
         });
 
         get("/", (request, response) -> {
