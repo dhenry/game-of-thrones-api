@@ -43,9 +43,9 @@ public class Main {
             return new ObjectMapper().writeValueAsString(gameState.getCurrentGame());
         });
 
-        put("/wildlingsFight", "application/json", (request1, response1) -> {
+        get("/battleWildlings", "application/json", (request1, response1) -> {
             boolean wonBattle = Boolean.parseBoolean(request1.queryParams("won"));
-            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame().fightWildlings(wonBattle));
+            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame().battleWildlings(wonBattle));
         });
 
         get("/", (request, response) -> {

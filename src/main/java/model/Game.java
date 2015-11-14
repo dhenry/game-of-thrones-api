@@ -67,7 +67,7 @@ public class Game {
         cards.addAll(Cards.getDeck(deckNumber));
     }
 
-    public Integer fightWildlings(boolean wonBattle) {
+    public Integer battleWildlings(boolean wonBattle) {
         if (wonBattle) {
             wildlingsStrength = 0;
         } else {
