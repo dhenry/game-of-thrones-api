@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import model.GameState;
 import spark.ModelAndView;
@@ -22,7 +23,25 @@ public class Main {
         port(Integer.valueOf(System.getenv("PORT")));
         staticFileLocation("/public");
 
-        get("/state", (request1, response1) -> gameState.getState());
+        get("/state", "application/json", (request1, response1) ->
+                new ObjectMapper().writeValueAsString(gameState.getCurrentGame()));
+
+        get("/roundOneCard", "application/json", (request1, response1) ->
+                new ObjectMapper().writeValueAsString(gameState.getCurrentGame().playRoundOneCard()));
+
+        get("/roundTwoCard", "application/json", (request1, response1) ->
+                new ObjectMapper().writeValueAsString(gameState.getCurrentGame().playRoundTwoCard()));
+
+        get("/roundThreeCard", "application/json", (request1, response1) ->
+                new ObjectMapper().writeValueAsString(gameState.getCurrentGame().playRoundThreeCard()));
+
+        get("/wildlings", "application/json", (request1, response1) ->
+                new ObjectMapper().writeValueAsString(gameState.getCurrentGame().getWildlingsStrength()));
+
+        get("/newGame", "application/json", (request1, response1) -> {
+            gameState.newGame();
+            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame().getWildlingsStrength());
+        });
 
         get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();

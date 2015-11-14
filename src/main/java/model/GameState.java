@@ -11,7 +11,7 @@ public class GameState {
         currentGame = new Game();
     }
 
-    public Game getState() {
+    public Game getCurrentGame() {
         return currentGame;
     }
 }
