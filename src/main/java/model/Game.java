@@ -66,4 +66,13 @@ public class Game {
     private void shuffle(List<EventCard> cards, int deckNumber) {
         cards.addAll(Cards.getDeck(deckNumber));
     }
+
+    public Integer fightWildlings(boolean wonBattle) {
+        if (wonBattle) {
+            wildlingsStrength = 0;
+        } else {
+            wildlingsStrength /= 2;
+        }
+        return wildlingsStrength;
+    }
 }

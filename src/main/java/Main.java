@@ -43,6 +43,11 @@ public class Main {
             return new ObjectMapper().writeValueAsString(gameState.getCurrentGame());
         });
 
+        put("/wildlingsFight", "application/json", (request1, response1) -> {
+            boolean wonBattle = Boolean.parseBoolean(request1.queryParams("won"));
+            return new ObjectMapper().writeValueAsString(gameState.getCurrentGame().fightWildlings(wonBattle));
+        });
+
         get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");
