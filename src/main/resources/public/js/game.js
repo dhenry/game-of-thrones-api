@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
     $("#play-one").click(function() {
         $.getJSON( "/roundOneCard", function(card) {
-            $("#round-one-last-played").attr("src", "/img/1_" + card.id + "@2x.png");
+            $("#round-one-last-played").attr("src", "/img/1_" + card.id + "@2x.jpg");
          }).fail(function() {
             alert( "failed to play a card" );
           });
@@ -16,7 +16,7 @@ $( document ).ready(function() {
 
     $("#play-two").click(function() {
         $.getJSON( "/roundTwoCard", function(card) {
-            $("#round-two-last-played").attr("src", "/img/2_" + card.id + "@2x.png");
+            $("#round-two-last-played").attr("src", "/img/2_" + card.id + "@2x.jpg");
          }).fail(function() {
             alert( "failed to play a card" );
           });
@@ -24,7 +24,7 @@ $( document ).ready(function() {
 
     $("#play-three").click(function() {
         $.getJSON( "/roundThreeCard", function(card) {
-            $("#round-three-last-played").attr("src", "/img/3_" + card.id + "@2x.png");
+            $("#round-three-last-played").attr("src", "/img/3_" + card.id + "@2x.jpg");
          }).fail(function() {
             alert( "failed to play a card" );
           });

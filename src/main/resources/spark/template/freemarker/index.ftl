@@ -9,9 +9,9 @@
   <#include "nav.ftl">
 
 <div class="text-center">
-    <img id="round-one-last-played" src="/img/1_back@2x.png"/>
-    <img id="round-two-last-played" src="/img/2_back@2x.png"/>
-    <img id="round-three-last-played" src="/img/3_back@2x.png"/>
+    <img id="round-one-last-played" src="/img/1_back@2x.jpg"/>
+    <img id="round-two-last-played" src="/img/2_back@2x.jpg"/>
+    <img id="round-three-last-played" src="/img/3_back@2x.jpg"/>
   <div class="container">
     <h3>Game of Thrones API</h3>
     <p>This app provides an API to modify some of the state for the game of thrones board game.</p>
