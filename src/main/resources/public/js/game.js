@@ -7,24 +7,24 @@ $( document ).ready(function() {
     });
 
     $("#play-one").click(function() {
-        $.get( "/roundOneCard", function(card) {
-            $("#round-one-last-played").src = "/img/1_" + card.id + "@2x.png";
+        $.getJSON( "/roundOneCard", function(card) {
+            $("#round-one-last-played").attr("src", "/img/1_" + card.id + "@2x.png");
          }).fail(function() {
             alert( "failed to play a card" );
           });
     });
 
     $("#play-two").click(function() {
-        $.get( "/roundTwoCard", function(card) {
-            $("#round-two-last-played").src = "/img/2_" + card.id + "@2x.png";
+        $.getJSON( "/roundTwoCard", function(card) {
+            $("#round-two-last-played").attr("src", "/img/2_" + card.id + "@2x.png");
          }).fail(function() {
             alert( "failed to play a card" );
           });
     });
 
     $("#play-three").click(function() {
-        $.get( "/roundThreeCard", function(card) {
-            $("#round-three-last-played").src = "/img/3_" + card.id + "@2x.png";
+        $.getJSON( "/roundThreeCard", function(card) {
+            $("#round-three-last-played").attr("src", "/img/3_" + card.id + "@2x.png");
          }).fail(function() {
             alert( "failed to play a card" );
           });

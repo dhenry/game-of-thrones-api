@@ -1,38 +1,53 @@
-# java-getting-started
+# game-of-thrones-api
 
-A barebones Java app, which can easily be deployed to Heroku.  
+Persists some of the Game of Thrones board game state.
 
-This application support the [Getting Started with Java on Heroku](https://devcenter.heroku.com/articles/getting-started-with-java) article - check it out.
+## Endpoints
 
-## Running Locally
+### GET /state || /newGame
 
-Make sure you have Java and Maven installed.  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+```javascript
+{
+    availableRoundOneCards: [{
+        id: 0,
+        title: "A Throne of Blades",
+        incrementsWildlings: true,
+        shuffleDeck: false
+    }],
+    availableRoundTwoCards: [{
+        id: 0,
+        title: "Dark Wings, Dark Words",
+        incrementsWildlings: true,
+        shuffleDeck: false
+    }],
+    availableRoundThreeCards: [{
+        id: 0,
+        title: "Put to the Sword",
+        incrementsWildlings: false,
+        shuffleDeck: false
+    }],
+    wildlingsStrength: 0
+}
+```
+### GET /roundOneCard || /roundTwoCard || /roundThreeCard 
 
-```sh
-$ git clone https://github.com/heroku/java-getting-started.git
-$ cd java-getting-started
-$ mvn install
-$ foreman start web
+```javascript
+{
+    id: 5,
+    title: "Feast for Crows",
+    incrementsWildlings: true,
+    shuffleDeck: false
+}
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+### GET /wildlings
 
-If you're going to use a database, ensure you have a local `.env` file that reads something like this:
-
-```
-DATABASE_URL=postgres://localhost:5432/java_database_name
+```javascript
+0 - 12
 ```
 
-## Deploying to Heroku
+### GET /battleWildlings?won=true||false
 
-```sh
-$ heroku create
-$ git push heroku master
-$ heroku open
+```javascript
+0 - 12
 ```
-
-## Documentation
-
-For more information about using Java on Heroku, see these Dev Center articles:
-
-- [Java on Heroku](https://devcenter.heroku.com/categories/java)
