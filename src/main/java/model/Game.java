@@ -32,6 +32,18 @@ public class Game {
         return wildlingsStrength;
     }
 
+    public List<EventCard> getAvailableRoundOneCards() {
+        return availableRoundOneCards;
+    }
+
+    public List<EventCard> getAvailableRoundTwoCards() {
+        return availableRoundTwoCards;
+    }
+
+    public List<EventCard> getAvailableRoundThreeCards() {
+        return availableRoundThreeCards;
+    }
+
     private EventCard playRandomCard(final List<EventCard> cards, int deckNumber) {
         // shuffle deck if no cards left
         if (cards.size() == 0) {

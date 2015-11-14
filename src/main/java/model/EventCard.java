@@ -20,6 +20,22 @@ public class EventCard {
     public EventCard() {
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isIncrementsWildlings() {
+        return incrementsWildlings;
+    }
+
+    public boolean isShuffleDeck() {
+        return shuffleDeck;
+    }
+
     public boolean incrementsWildlings() {
         return incrementsWildlings;
     }
