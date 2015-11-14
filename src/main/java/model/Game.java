@@ -50,7 +50,7 @@ public class Game {
             shuffle(cards, deckNumber);
         }
         // grab a random card
-        EventCard card = cards.remove(new Random().nextInt(cards.size()-1));
+        EventCard card = cards.remove(new Random().nextInt(cards.size()));
         // increment wildlingsStrength if required
         if (card.incrementsWildlings()) {
             wildlingsStrength += 2;

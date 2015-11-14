@@ -51,11 +51,11 @@ public class Cards {
     public static List<EventCard> getDeck(int deckNumber) {
         switch (deckNumber) {
             case 1:
-                return roundOneDeck;
+                return new ArrayList<>(roundOneDeck);
             case 2:
-                return roundTwoDeck;
+                return new ArrayList<>(roundTwoDeck);
             case 3:
-                return  roundThreeDeck;
+                return  new ArrayList<>(roundThreeDeck);
             default:
                 throw new RuntimeException("Invalid deck number:" + deckNumber);
         }
